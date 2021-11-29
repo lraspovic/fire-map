@@ -1,0 +1,232 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Times New Roman', Times, serif;
+
+}
+
+body {
+	background: #57BA98;
+}
+
+
+@font-face {
+	font-family: baba;
+	src: url('../font/BebasNeue-Regular.ttf');
+}
+
+/* LINKS */
+a {
+	text-decoration: none;
+}
+
+.link-container {
+	font-family: baba;
+	border-radius: 4px;
+	padding: 4px;
+	letter-spacing: 5px;
+	border: none;
+	font-weight: bold;
+}
+
+.link-container a {
+	font-size: 16px;
+	color: #F2F2F2;
+}
+
+.link-container:hover {
+	background-color: rgba(101, 204, 184, 0.5);
+	cursor: pointer;
+}
+
+
+
+/* HEADER */
+.header-bar {
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	justify-content: space-between;
+	background-color: #3B945E;
+	border-bottom: 3px solid #57BA98;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+	.header-bar, .header-content {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+#img-container {
+	width: 90px;
+	height: 82px;
+	margin: 5px 20px;
+	cursor: pointer;
+	border: 2px solid #F2F2F2;
+	border-radius: 50%;
+	background-color: #57BA98;
+}
+
+#img-container:hover {
+	border-color: orange;
+}
+
+#hrvatska-img {
+	margin-left: 8px;
+	margin-top: 2px;
+}
+
+#pozar-img {
+	margin-left: -48px;
+	margin-bottom: 14px;
+}
+
+.title-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.title-container div {
+	font-family: baba;
+	font-size: 24px;
+	margin: 0;
+	color: #F2F2F2;
+}
+
+
+
+
+#pozadina {
+	height: 80%;
+	position: relative;
+	background-color: transparent;
+}
+
+#sadrzaj {
+	padding: 30px 40px;
+	background-color: rgba(144, 238, 144, 0.8);
+	position: absolute;
+	width: 70%;
+	text-align: justify;
+	left: 200px;
+	font-size: 19px;
+	border-radius: 5px;
+}
+
+#sadrzaj p, ul, li {
+	margin: 10px;
+	font-family: "Times new Roman", serif;
+	line-height: 1.6;
+}
+
+#sadrzaj img {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	height: 400px;
+}
+
+figure figcaption {
+	text-align: center;
+}
+
+#sadrzaj img #interes {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: 400px;
+}
+
+#sadrzaj h2, h3 {
+	margin: 10px;
+	font-family: "Times new Roman", serif;
+}
+
+li a {
+	text-decoration: none;
+	color: #006400;
+}
+
+#font {
+	font-family: baba;
+}
+
+
+table {
+	position: relative;
+	display: block;
+	margin-left: 20px;
+	font-family: "Times new Roman", serif;
+	border-collapse: collapse;
+	width: 70%;
+}
+
+
+td, th {
+	font-size: 16px;
+	border: none;
+	text-align: left;
+	padding: 8px;
+	border: 1px solid black;
+	background-color: transparent;
+}
+
+tr:nth-child(even) {
+
+	/* right: 0px */
+}
+
+tr:nth-child(odd) {
+	background-color: #3B945E;
+	right: 0px
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	background-color: #3B945E;
+	height: calc(5% - 2px);
+	border-top: 2px solid #182628;
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #3B945E;
+	height: calc(4% - 2px);
+	border-top: 3px solid #57BA98;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #F2F2F2;
+	font-family: Arial, sans-serif;
+}
+
+#copyright {
+	font-family: baba;
+	float: right;
+	margin: 5px 10px 5px 5px;
+	color: #F2F2F2;
+}
+
+#copyright a {
+	text-decoration: none;
+	color: #F2F2F2;
+	font-family: Arial, sans-serif;
+}

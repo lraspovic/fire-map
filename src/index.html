@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Analiza požara</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/ol/ol.css"/>
+    <link rel="stylesheet" href="../data/css/ol-layerswitcher.css">
+    <link rel="stylesheet" href="../data/css/ol-ext.css">
+    <link rel="stylesheet" href="../data/css/index.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div id="img-container" title="Početna stranica"><a href="index.html">
+          <img id="hrvatska-img" src="../data/img/hrvatska.png">
+          <img id="pozar-img" src="../data/img/pozar.png">
+          </a>
+        </div>
+        <div class="title">ANALIZA SPLITSKOG POŽARA IZ 2017-te GODINE</div><br>
+        <div class="about"> <a href="about.html">O PROJEKTU</a>
+        </div>
+      </div>
+    </header>
+    <div id="map">
+      <div class="map-controls">
+        <div id="searchBar" title="Traži česticu">
+          <input id="unos" type="search" placeholder="Pretraži kč.">
+        </div>
+        <div class="map-controls-btn" id="home-container" title="Opožareno područje">
+          <span class="material-icons-round" id="home-icon">
+            home
+            </span>
+        </div>
+        <div class="map-controls-btn" id="swipe-container" title="Usporedba">
+          <span class="material-icons-round" id="swipe-icon">
+            compare
+            </span>
+        </div>
+      </div>
+      <div class="map-controls-btn" id="legend-container" title="Legenda">
+        <button id="legend"></button>
+      </div>
+      <div id="menu">
+        <span class="submenu" id="legend1">Corine Land Cover (CLC)</span>
+          <div class="submenu-list" id="list1">
+            <ul>
+              <div style="background-color: #E6004D"></div>
+            <li>111 - Cjelovita gradska<br> područja</li>
+              <div style="background-color: #FF0000"></div>
+            <li>112 - Nepovezana gradska<br> područja</li>
+              <div style="background-color: #CD4DF2"></div>
+            <li>121 - Industrijski ili <br> komercijalni objekti</li>
+              <div style="background-color: #CD0000"></div>
+            <li>122 - Cestovna i željeznička <br>mreža i pripadajuće zemljište</li>
+              <div style="background-color:#E6CDCD"></div>
+            <li>123 - Lučke površine</li>
+              <div style="background-color:#E6CDE6"></div>
+            <li>124 - Zračne luke</li>
+              <div  style="background-color:#A600CD"></div>
+            <li>131 - Mjesta eksploatacije<br>mineralnih sirovina</li>
+              <div style="background-color:#A64D00"></div>
+            <li>132 - Odlagališta otpada</li>
+              <div style="background-color:#FF4DFF"></div>
+            <li>133 - Gradilišta</li>
+              <div style="background-color:#FFA6FF"></div>
+            <li>141 - Zelene gradske<br> površine</li>
+              <div style="background-color:#FFE6FF"></div>
+            <li>142 - Športsko rekreacijske<br>površine</li>
+              <div style="background-color:#FFFFA8"></div>
+            <li>211 - Nenavodnjavano <br>obradivo zemljište</li>
+              <div style="background-color:#FFFF00"></div>
+            <li>212 - Trajno navodnjavano<br>zemljište</li>
+              <div style="background-color:#E68000"></div>
+            <li>221 - Vinogradi</li>
+              <div style="background-color:#F2A64D"></div>
+            <li>222 - Voćnjaci</li>
+              <div style="background-color:#E6A600"></div>
+            <li>223 - Maslinici</li>
+              <div style="background-color:#E6E64D"></div>
+            <li>231 - Pašnjaci</li>
+              <div style="background-color:#FFE6A6"></div>
+            <li>241 - Jednogodišnji usjevi<br>u zajednici s višegodišnjim<br>nasadima</li>
+              <div style="background-color:#FFE64D"></div>
+            <li>242 - Mozaik poljoprivrednih<br>površina</li>
+              <div style="background-color:#E6CD4D"></div>
+            <li>243 - Pretežno <br>poljoprivredno zemljište, sa<br> značajnim udjelom prirodnog<br> biljnog pokrova</li>
+              <div style="background-color:#80FF00"></div>
+            <li>311 - Bjelogorična šuma</li>
+              <div style="background-color:#00A600"></div>
+            <li>312 - Crnogorična šuma</li>
+              <div style="background-color:#4DFF00"></div>
+            <li>313 - Mješovita šuma</li>
+              <div style="background-color:#CDF24D"></div>
+            <li>321 - Prirodni travnjaci</li>
+              <div style="background-color:#A6FF80"></div>
+            <li>322 - Kontinentalna grmolika<br>vegetacija(vrištine, cretovi<br>i niske šikare</li>
+              <div style="background-color:#A6E64D"></div>
+            <li>323 - Mediteranska grmolika<br>vegetacija (sklerofilna)</li>
+              <div style="background-color:#A6F200"></div>
+            <li>324 - Sukcesija šume<br>(zemljišta u zarastanju)</li>
+              <div style="background-color:#E6E6E6"></div>
+            <li>331 - Plaže, dine i pijesci</li>
+              <div style="background-color:#CDCDCD"></div>
+            <li>332 - Gole stijene</li>
+              <div style="background-color:#CDFFCD"></div>
+            <li>333 - Područja s oskudnom<br>vegetacijom</li>
+              <div style="background-color:#000000"></div>
+            <li>334 - Opožarena područja</li>
+              <div style="background-color:#A6A6FF"></div>
+            <li>411 - Kopnene močvare</li>
+              <div style="background-color:#E6E6FF"></div>
+            <li>422 - Solane</li>
+              <div style="background-color:#A6A6E6"></div>
+            <li>324 - Područja plimnog<br>utjecaja</li>
+              <div style="background-color:#00CDF2"></div>
+            <li>511 - Vodotoci</li>
+              <div style="background-color:#80F2E6"></div>
+            <li>512 - Vodna tijela</li>
+              <div style="background-color:#00FFA6"></div>
+            <li>521 - Obalne lagune</li>
+              <div style="background-color:#E6F2FF"></div>
+          </ul>
+        </div>
+        <span class="submenu" id="legend2">Jačina izgorenosti </span>
+          <div class="submenu-list" id="list2">
+            <ul>
+              <div style="background-color: #FC7050"></div>
+            <li>Slabo opožareno</li>
+              <div style="background-color: #EB362A"></div>
+            <li>Srednje opožareno</li>
+              <div style="background-color: #BA1419"></div>
+            <li>Srednje jako opožareno</li>
+              <div style="background-color: #67000D"></div>
+            <li>Jako opožareno</li>
+          </ul>
+        </div>
+        <span class="submenu" id="legend3">Šumski pokrov</span>
+          <div class="submenu-list" id="list3">
+            <ul>
+              <div style="background-color: #1daf3d"></div>
+            <li>Bjelogorična šuma</li>
+              <div style="background-color: #045f13"></div>
+            <li>Crnogorična šuma</li>
+          </ul>
+        </div>
+      </div>
+      <div id="popup" class="ol-popup">
+        <div id="popup-btns">
+          <div id="popup-btns-empty">
+          </div>
+          <div title="Prikaži graf">
+            <span class="material-icons-round chart-icon" id="chart-icon" >assessment</span>
+          </div>
+          <div title="Zatvori">
+            <span class="material-icons-round close-icon" id ="close-icon">disabled_by_default</span>
+          </div>
+        </div>
+        <div id="popup-content">
+          <table id="popup-table">
+            <tr>
+              <th id="th-kc_broj" style="font-size: large;"></th>
+              <th style="font-size: large;">m²</th>
+            </tr>
+            <tr>
+              <th>Površina</th>
+              <th id="th-povrsina"></th>
+            </tr>
+            <tr>
+              <th>Opožarena površina</th>
+              <th id="th-opozareno"></th>
+            </tr>
+            <tr>
+              <th>Slabo opožareno</th>
+              <th id="th-slabo"></th>
+            </tr>
+            <tr>
+              <th>Srednje opožareno</th>
+              <th id="th-srednje"></th>
+            </tr>
+            <tr>
+              <th>Srednje jako opožareno</th>
+              <th id="th-srednje-jako"></th>
+            </tr>
+            <tr>
+              <th>Jako opožareno</th>
+              <th id="th-jako"></th>
+            </tr>
+            <tr>
+              <th>Bjelogorica pokrov</th>
+              <th id="th-bg-pokrov"></th>
+            </tr>
+            <tr>
+              <th>Bjelogorica izgoreno</th>
+              <th id="th-bg-izgoreno"></th>
+            </tr>
+            <tr>
+              <th>Crnogorica pokrov</th>
+              <th id="th-cg-pokrov"></th>
+            </tr>
+            <tr>
+              <th>Crnogorica izgoreno</th>
+              <th id="th-cg-izgoreno"></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="chart">
+        <div class="chart-container" id="burn-chart"></div>
+        <div class="chart-container" id="forest-chart"></div>
+      </div>
+      <div class="comparison-info" id="clc_2012">CLC 2012</div>
+      <div class="comparison-info" id="clc_2018">CLC 2018</div>
+    </div>
+    <footer>
+      <span id="copyright">&copy 2021<a href="mailto: lraspovic993@gmail.com" title="Mail" > Luka Raspović </a></span>
+    </footer>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>

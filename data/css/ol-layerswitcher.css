@@ -1,0 +1,136 @@
+.layer-switcher.shown.ol-control {
+    background-color: transparent;
+
+}
+
+.layer-switcher.shown.ol-control:hover {
+    background-color: transparent;
+}
+
+.layer-switcher {
+    position: absolute;
+    top: 13.6em;
+    right: 0.47em;
+    text-align: left;
+    height: 200px;
+    background-color: transparent;
+}
+
+.layer-switcher:hover {
+    background-color: transparent;
+}
+
+.layer-switcher.shown {
+    bottom: 3em;
+}
+
+.layer-switcher .panel {
+    white-space: nowrap;
+    z-index: 200;
+    padding: 0em 1em ;
+    margin: 0;
+    border: 4px solid #65CCB8;
+    border-radius: 4px;
+    background-color: rgba(144,238,144,0.6);
+    display: none;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.layer-switcher.shown .panel {
+    display: block;
+}
+
+.layer-switcher button {
+    float: right;
+    width: 38px;
+    height: 38px;
+    background-image: url('../img/layers.png') /*logo.png*/;
+    background-repeat: no-repeat;
+    background-position: 6px;
+    background-color: #3B945E;
+    border: none;
+    outline: none;
+}
+
+.layer-switcher.shown button {
+    /*display: none;*/
+}
+
+.layer-switcher button:hover {
+    background-color: #65CCB8;
+    cursor: pointer;
+}
+
+.layer-switcher ul {    
+    padding-left: 1em;
+    list-style: none;
+}
+
+.layer-switcher li.group {
+    padding-top: 5px;
+}
+
+.layer-switcher li.group > label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.layer-switcher li.layer {
+    display: table;
+}
+
+.layer-switcher li.layer label, .layer-switcher li.layer input{
+    display: table-cell;
+    vertical-align: sub;
+    font-size: 15px;
+}
+
+.layer-switcher label.disabled {
+    opacity:0.4;
+}
+
+.layer-switcher input {
+    margin: 4px;
+    /*opacity: 0;*/
+}
+
+
+.layer-switcher.touch ::-webkit-scrollbar {
+    width: 4px;
+}
+
+.layer-switcher.touch ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.layer-switcher.touch ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.layer-switcher .group.layer-switcher-fold > label:before  {
+    content: '';
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.layer-switcher .group.layer-switcher-fold.layer-switcher-close > label:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.layer-switcher .group.layer-switcher-fold.layer-switcher-open > label:before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.layer-switcher .group.layer-switcher-fold.layer-switcher-close > ul {
+    overflow: hidden;
+    height: 0;
+}
