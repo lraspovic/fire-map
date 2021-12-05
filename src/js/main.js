@@ -141,6 +141,7 @@ map.on('singleclick', (e) => {
       });
 
       popup.setPosition(e.coordinate);
+      $('#popup').show();
     }
   });
 });
@@ -218,6 +219,8 @@ $('#legend3').on('click', () => {
 /// POPUP ///
 $('#close-icon').on('click', () => {
   popup.setPosition(undefined);
+  $('#chart-icon').removeClass('btn-active');
+  $('#chart').hide();
 });
 
 /// CHART BTN ///

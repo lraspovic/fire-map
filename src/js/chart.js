@@ -6,6 +6,16 @@ export const burnChartOptions = {
     height: 250,
     type: 'donut',
   },
+  title: {
+    text: 'Opožarena površina k.č.',
+    align: 'center',
+    offsetY: -5,
+    style: {
+      fontSize: '14px',
+      color: 'white',
+      fontWeight: 550,
+    },
+  },
   dataLabels: {
     enabled: true,
   },
@@ -18,10 +28,10 @@ export const burnChartOptions = {
   },
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 768,
       options: {
         chart: {
-          width: 200,
+          height: 150,
         },
         legend: {
           show: false,
@@ -77,9 +87,18 @@ export const forestChartOptions = {
     type: 'bar',
     height: 250,
     stacked: true,
-    // stackType: '100%',
     toolbar: {
       show: false,
+    },
+  },
+  title: {
+    text: 'Opožarena šumska površina k.č.',
+    align: 'center',
+    offsetY: -5,
+    style: {
+      fontSize: '14px',
+      color: 'white',
+      fontWeight: 550,
     },
   },
   dataLabels: {
@@ -87,8 +106,11 @@ export const forestChartOptions = {
   },
   responsive: [
     {
-      breakpoint: 480,
+      breakpoint: 768,
       options: {
+        chart: {
+          height: 150,
+        },
         legend: {
           show: false,
         },

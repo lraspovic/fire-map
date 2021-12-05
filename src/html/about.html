@@ -5,20 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../data/css/index.css" />
-  <link rel="stylesheet" href="../data/css/about.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/about.css" />
   <title>O projektu</title>
 </head>
 
 <body>
   <header>
     <div class="header-content">
-      <div id="img-container" title="Početna stranica"><a href="index.html">
-          <img id="hrvatska-img" src="../data/img/hrvatska.png">
-          <img id="pozar-img" src="../data/img/pozar.png">
+      <div id="img-link-container" title="Početna stranica">
+        <a href="index.html">
+          <div id="img-container" >
+            <img id="hrvatska-img" src="../../data/img/hrvatska.png">
+            <img id="pozar-img" src="../../data/img/pozar.png">
+        </div>
         </a>
       </div>
-      <div class="title">ANALIZA SPLITSKOG POŽARA IZ 2017. GODINE</div><br>
+      <div class="title">ANALIZA SPLITSKOG POŽARA IZ 2017-te GODINE</div><br>
       <div class="about"> <a href="about.html">O PROJEKTU</a>
       </div>
     </div>
@@ -36,7 +39,7 @@
         Područje koje se analiziralo je Splitsko dalmatinska županija za vrijeme velikog požara u srpnju 2017. godine.
       </p><br>
       <figure>
-        <img id="interes" src="../data/img/podrucje_analize.png" alt="interesno podrucje"><br>
+        <img id="interes" src="../../data/img/podrucje_analize.png" alt="interesno podrucje"><br>
         <figcaption class='img-description'>Područje od interesa</figcaption>
       </figure>
 
@@ -69,10 +72,10 @@
         Izrade projekta je započela sa vektorizacijom katastarskih
         čestica u Splitsko dalmatinskoj županiji i preuzimanjem satelitskih snimki Sentinel 2 satelitskog sustava.
         Obzirom da nije bilo dostupnih vektorskih podataka interesno područje površine 0.25 km2 vektorizirano je
-        koristeći program QGIS te WMS uslugu za katastarske čestice DGU geoportala.
+        koristeći program QGIS na temelju WMS sloja za katastarske čestice DGU geoportala.
       </p><br>
       <figure>
-        <img src="../data/img/vektorizirano_podrucje.png" alt="vektorizirano područje"><br>
+        <img src="../../data/img/vektorizirano_podrucje.png" alt="vektorizirano područje"><br>
         <figcaption class='img-description'>Vektorizirano područje</figcaption>
       </figure>
 
@@ -84,21 +87,15 @@
         10 metarsku rezoluciju pomoću algoritma najbližeg susjeda.
       </p>
       <figure>
-        <img src="../data/img/sentinel_kanali.png" alt="sentinel kanali"><br>
+        <img src="../../data/img/sentinel_kanali.png" alt="sentinel kanali"><br>
         <figcaption class='img-description'>Sentinel 2 kanali</figcaption>
       </figure>
 
       <p>
         Razlika NBR-a prije požara i NBR-a nakon daje direrencijalni NBR (dNBR) pomoću kojeg se može klasificirati
-        sama jačina požara. dNBR je u rasterskom obliku, te ga je potrebno vektorizirati. To je učinjeno koristeći SAGA alate u
-        sklopu QGIS-a. 
+        sama jačina požara.
+        Klasifikacija direrencijalnog NBR-a je prikazana u tablici.<br>
       </p>
-      <figure>
-        <img src="../data/img/dnbr.png" alt="dnbr"><br>
-        <figcaption class='img-description'>Vektorizirani diferencijalni NBR </figcaption>
-      </figure>
-      Klasifikacija direrencijalnog NBR-a je prikazana u tablici.<br>
-      <p></p>
       <table>
         <tr>
           <th colspan="2" style="text-align: center;">dNBR</th>
@@ -123,7 +120,7 @@
           <td>> 0.70</td>
           <td>Jako opožareno</td>
         </tr>
-      </table><br><br>
+      </table><br>
       <p>
         Preko digitalne baze CORINE Land Cover Hrvatska dobiven su
         slojevi potrebni za analizu: pokrov zemljišta za godine 2012 i 2018, te vrsta
@@ -157,11 +154,11 @@
         <li><a href="https://www.flaticon.com/free-icons/printer" target="_blank">Flaticon</a></li>
       </ul>
       <br>
+      <p>
+        Web kartu izradio <a href="mailto:lraspovic993@gmail.com">Luka Raspović</a>.
+      </p>
+      <br>
     </div>
-    <footer>
-      <span id="copyright">&copy 2021<a href="mailto: lraspovic993@gmail.com" title="Mail" > Luka Raspović </a></span>
-    </footer>
-
   </div>
 
 </body>

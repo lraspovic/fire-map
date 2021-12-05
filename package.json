@@ -13,8 +13,8 @@
     "extends": "openlayers"
   },
   "scripts": {
-    "start": "parcel serve src/index.html",
-    "build": "parcel build src/index.html --public-url ./ && shx cp -r data dist/"
+    "start": "parcel serve src/html/index.html",
+    "build": "parcel build src/html/index.html --public-url ./ && shx cp -r data dist/"
   },
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",

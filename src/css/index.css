@@ -1,11 +1,11 @@
 @font-face {
   font-family: baba;
-  src: url('../font/BebasNeue-Regular.ttf');
+  src: url('../../data/font/BebasNeue-Regular.ttf');
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+	width:  100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
@@ -24,6 +24,7 @@ header {
   padding: 8px;
   background-color: #3B945E;
   border-bottom: 3px solid #57BA98;
+  height: 10vh;
 }
 
 .header-content {
@@ -63,21 +64,21 @@ header {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .header-bar, .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+
 
 #img-container {
-  width: 90px;
-  height: 82px;
+  position: relative;
+  display: flex;
+  height: 8vh;
+  width: 8vh;
   margin: 5px 20px;
   cursor: pointer;
   border: 2px solid #F2F2F2;
   border-radius: 50%;
   background-color: #57BA98;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #img-container:hover {
@@ -85,24 +86,22 @@ header {
 }
 
 #hrvatska-img {
-  height: 75px;
-  width: 75px;
-  margin-left: 8px;
-  margin-top: 2px;
+  height: 100%;
+  position: absolute;
 }
 
 #pozar-img {
-  height: 41px;
-  width: 41px;
-  margin-left: -48px;
-  margin-bottom: 14px;
+  height: 50%;
+  position: absolute;
 }
 
 
 /* MAP */
 #map {
-  height: 84%;
+  height: calc(90vh - 19px);
+  width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 
@@ -149,7 +148,7 @@ input::placeholder {
 }
 
 #searchBar input[type=search] {
-  background: #3B945E url("../img/search.png") no-repeat 6px center;
+  background: #3B945E url("../../data/img/search.png") no-repeat 6px center;
   box-sizing: content-box;
   padding: 9px 10px;
   width: 18px;
@@ -200,12 +199,12 @@ input::placeholder {
 
 /* LENEND */
 #legend-container {
-  position: fixed;
-  bottom: 6rem;
+  position: absolute;
+  bottom: 3rem;
 }
 
 #legend {
-  background: #3B945E url("../img/legenda_bez_pozadine.png") no-repeat 6px center;
+  background: #3B945E url("../../data/img/legenda_bez_pozadine.png") no-repeat 6px center;
   border: none;
   padding: 9px 10px;
   width: 38px;
@@ -369,6 +368,7 @@ footer {
   border-radius: 10px;
   bottom: 12px;
   left: -50px;
+  display: none;
 }
 
 .ol-popup:after, .ol-popup:before {
@@ -475,7 +475,7 @@ footer {
   top: 0px;
   left: 0px;
   width: 400px;
-  height: 450px;
+  height: 470px;
   z-index: 20;
   background-color: rgba(65, 64, 64, 0.7);
   border-radius: 0px 5px 5px 0px;
@@ -484,6 +484,9 @@ footer {
 
 #burn-chart {
   padding-top: 15px;
+}
+#forest-chart {
+  padding-top: 10px;
 }
 
 .comparison-info {
@@ -515,3 +518,29 @@ footer {
   vertical-align: middle;
 }
 
+@media screen and (max-width: 768px) {
+  .header-content {
+    /* flex-direction: column; */
+    text-align: center;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .about a {
+    font-size: 1rem;
+  }
+
+  #img-container {
+    height: 6vh;
+    /* width: 5vh; */
+    margin: 5px 20px;
+    cursor: pointer;
+    border: 2px solid #F2F2F2;
+    border-radius: 50%;
+    background-color: #57BA98;
+  }
+  #chart {
+    width: 200px;
+    height: 300px;
+  }
+}

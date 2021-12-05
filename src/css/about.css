@@ -1,6 +1,6 @@
 html, body {
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	padding: 0;
 	margin: 0;
 	font-family: 'Times New Roman', Times, serif;
@@ -11,15 +11,16 @@ body {
 	background: #57BA98;
 }
 
-
 @font-face {
 	font-family: baba;
-	src: url('../font/BebasNeue-Regular.ttf');
+	src: url('../../data/font/BebasNeue-Regular.ttf');
 }
 
 /* LINKS */
 a {
 	text-decoration: none;
+	color: black;
+	font-weight: bolder;
 }
 
 .link-container {
@@ -44,35 +45,66 @@ a {
 
 
 /* HEADER */
-.header-bar {
+header {
 	display: flex;
 	align-items: center;
-	padding: 8px;
 	justify-content: space-between;
+	padding: 8px;
 	background-color: #3B945E;
 	border-bottom: 3px solid #57BA98;
+	height: 10vh;
 }
 
 .header-content {
 	display: flex;
 	align-items: center;
+	width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-	.header-bar, .header-content {
-		flex-direction: column;
-		text-align: center;
-	}
+.title, .about {
+	font-family: baba;
+	border-radius: 4px;
+	padding: 4px;
+	letter-spacing: 5px;
+	border: none;
+	font-weight: bold;
+	vertical-align: 'middle';
+}
+
+.title {
+	font-size: 24px;
+	margin: 0;
+	color: #F2F2F2;
+	cursor: default;
+}
+
+.about {
+	margin-left: auto;
+}
+
+.about a {
+	font-size: 16px;
+	color: #F2F2F2;
+}
+
+.about:hover {
+	background-color: rgba(101, 204, 184, 0.5);
+	cursor: pointer;
 }
 
 #img-container {
-	width: 90px;
-	height: 82px;
+	position: relative;
+	display: flex;
+	height: 8vh;
+	width: 8vh;
 	margin: 5px 20px;
 	cursor: pointer;
 	border: 2px solid #F2F2F2;
 	border-radius: 50%;
 	background-color: #57BA98;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 #img-container:hover {
@@ -80,35 +112,13 @@ a {
 }
 
 #hrvatska-img {
-	margin-left: 8px;
-	margin-top: 2px;
+	height: 100%;
+	position: absolute;
 }
 
 #pozar-img {
-	margin-left: -48px;
-	margin-bottom: 14px;
-}
-
-.title-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
-
-.title-container div {
-	font-family: baba;
-	font-size: 24px;
-	margin: 0;
-	color: #F2F2F2;
-}
-
-
-
-
-#pozadina {
-	height: 80%;
-	position: relative;
-	background-color: transparent;
+	height: 50%;
+	position: absolute;
 }
 
 #sadrzaj {
@@ -194,39 +204,26 @@ tr:nth-child(odd) {
 	right: 0px
 }
 
-footer {
-	position: fixed;
-	width: 100%;
-	background-color: #3B945E;
-	height: calc(5% - 2px);
-	border-top: 2px solid #182628;
-}
+@media screen and (max-width: 768px) {
+	.header-content {
+		/* flex-direction: column; */
+		text-align: center;
+	}
 
-footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #3B945E;
-	height: calc(4% - 2px);
-	border-top: 3px solid #57BA98;
-}
+	.title {
+		font-size: 1rem;
+	}
 
-#footer a {
-	text-decoration: none;
-	color: #F2F2F2;
-	font-family: Arial, sans-serif;
-}
+	.about a {
+		font-size: 1rem;
+	}
 
-#copyright {
-	font-family: baba;
-	float: right;
-	margin: 5px 10px 5px 5px;
-	color: #F2F2F2;
-}
-
-#copyright a {
-	text-decoration: none;
-	color: #F2F2F2;
-	font-family: Arial, sans-serif;
+	#img-container {
+		height: 6vh;
+		margin: 5px 20px;
+		cursor: pointer;
+		border: 2px solid #F2F2F2;
+		border-radius: 50%;
+		background-color: #57BA98;
+	}
 }
